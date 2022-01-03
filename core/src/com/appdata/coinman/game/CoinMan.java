@@ -64,7 +64,7 @@ public class CoinMan extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		now=Calendar.getInstance();
 		hour=now.get(Calendar.HOUR_OF_DAY);
-		background=new Texture("back.jpg");
+		background=new Texture("bg.jpg");
 //		if(hour>=20 && hour<4)
 //			background=new Texture("night.jpeg");
 //		else if(hour>4 && hour<12)
@@ -215,11 +215,11 @@ public class CoinMan extends ApplicationAdapter {
 				break;
 			}
 		}
-		if(background.getHeight()-many<=400){
+		if(Gdx.graphics.getHeight()-many<=300){
 			gameState=2;
 			batch.draw(dizzle,Gdx.graphics.getWidth()/2-man[index].getWidth()/2-200,many);
 		}
-		font.draw(batch,"Score: "+String.valueOf(score),background.getWidth()-700,background.getHeight()-200);
+		font.draw(batch,"Score: "+String.valueOf(score),Gdx.graphics.getWidth()-1000,Gdx.graphics.getHeight()-100);
 		batch.end();
 	}
 	
